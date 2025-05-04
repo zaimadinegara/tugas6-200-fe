@@ -1,14 +1,14 @@
-runtime: python39  # Menggunakan Python versi 3.9 sebagai lingkungan eksekusi aplikasi
-service: fe-200  # Identitas layanan App Engine, dapat disesuaikan sesuai kebutuhan
-instance_class: F1  # Tipe instance yang digunakan, F1 adalah kelas ringan dan standar
+runtime: python39
+service: default
+instance_class: F1
 
 handlers:
   - url: /
-    static_files: index.html  # Menyajikan file index.html saat mengakses halaman utama
-    upload: index.html  # File yang diizinkan untuk diupload pada root URL
+    static_files: index.html
+    upload: index.html
 
   - url: /(.*)
-    static_files: \1  # Menyajikan file statis berdasarkan path yang diminta
-    upload: (.*)  # Mengizinkan upload semua file yang sesuai pola
+    static_files: \1
+    upload: (.*)
 
-default_expiration: "1h"  # Mengatur masa simpan cache browser selama satu jam
+default_expiration: "1h"
